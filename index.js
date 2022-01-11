@@ -1,30 +1,15 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    $(".login-cover").hide();
+	$("#SignUpBtn").hide();
+	$("#ShowModel").hide();
 	$("#signOutBtn").show();
-    var dialog = document.querySelector('#loginDialog');
-    /*
-    if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-    */
-    dialog.close();
 
   } else {
-
-    $(".login-cover").show();
 	$("#SignUpBtn").show();
 	$("#ShowModel").show();
 	$("#signOutBtn").hide();
-
     // No user is signed in.
-    var dialog = document.querySelector('#loginDialog');
-    if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
-    }
-    dialog.close();
-	/*dialog.showModel*/
 
   }
 });
