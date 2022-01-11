@@ -14,6 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+		<!--firebase java script-->
+
+		<!-- end of firebase java javascript-->
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -24,25 +27,44 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                        <li class="nav-item"><button id="signOutBtn" class="nav-link btn btn-danger">Log Out</button></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Header-->
-        <header class="masthead text-center text-white">
-            <div class="masthead-content">
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
                 <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">asdasd</h1>
-                    <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                    <h1 class="masthead-heading mb-0">&nbsp;Play Our Game!&nbsp;&nbsp;</h1>
+                    <h2 class="masthead-subheading mb-0">Will be Funny!&nbsp;</h2>
+                  <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Download IT!&nbsp;</a>
                 </div>
             </div>
-            <div class="bg-circle-1 bg-circle"></div>
-            <div class="bg-circle-2 bg-circle"></div>
-            <div class="bg-circle-3 bg-circle"></div>
-            <div class="bg-circle-4 bg-circle"></div>
-        </header>
+</header>
+				  <!-- LOGIN DIALOG -->
+  <dialog id="loginDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Sign In</h4>
+    <div class="mdl-dialog__content">
+      <p id="loginError"></p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="loginEmail">
+        <label class="mdl-textfield__label" for="sample3">Email...</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="loginPassword">
+        <label class="mdl-textfield__label" for="sample3">Password...</label>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <!-- Colored raised button -->
+      <button id="loginBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+        Sign In
+      </button>
+      <!-- MDL Spinner Component -->
+      <div id="loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+  </dialog>
         <!-- Content section 1-->
         <section id="scroll">
             <div class="container px-5">
@@ -90,7 +112,22 @@
                     </div>
                 </div>
             </div>
-        </section>
+			</section>
+              <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAaWeOhjHEv70fYA-tWp_l_DHB0519wZkc",
+      authDomain: "rurulala-74bc1.firebaseapp.com",
+      databaseURL: "https://rurulala-74bc1-default-rtdb.firebaseio.com/",
+      storageBucket: "rurulala-74bc1.appspot.com",
+      messagingSenderId: "786795327051"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="index.js"></script>
         <!-- Footer-->
         <footer class="py-5 bg-black">
             <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p></div>
