@@ -14,6 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
 
     $(".login-cover").show();
+	$("#SignUpBtn").show();
+	$("#ShowModel").show();
 	$("#signOutBtn").hide();
 
     // No user is signed in.
@@ -22,6 +24,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       dialogPolyfill.registerDialog(dialog);
     }
     dialog.close();
+	/*dialog.showModel*/
 
   }
 });
@@ -51,12 +54,21 @@ $("#loginBtn").click(
     }
   }
 );
+/* ShowModal dialog button*/
+$("#ShowModal").click(
+  function(){
+	      var dialog = document.querySelector('#loginDialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+	  dialog.showModal();
+  }
+);
 
 /* LOGOUT PROCESS */
 
 $("#signOutBtn").click(
   function(){
-
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
 		$("#loginBtn").show();
