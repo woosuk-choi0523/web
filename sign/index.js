@@ -5,10 +5,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   } else {
 	  var userEmail=getCookie("user_email");
-	  console.log('rurulala');
+	  console.log(userEmail);
+	  $("#loginProgress").hide();
 	  if(userEmail != null){
-	  document.getElementById("#email").value = userEmail;
-  }
+	  document.getElementById("email").value = userEmail;
+	  document.getElementById("Remember").checked = true;
+	  }
   }
 });
 
@@ -30,7 +32,8 @@ $("#loginBtn").click(
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-		  
+		  $("#loginBtn").show();
+		  $("#loginProgress").hide();
 		$("#error").text(errorMessage);
       });
     }

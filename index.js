@@ -2,12 +2,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 	$("#SignUpBtn").hide();
-	$("#ShowModel").hide();
+	$("#ShowModal").hide();
 	$("#signOutBtn").show();
 
   } else {
 	$("#SignUpBtn").show();
-	$("#ShowModel").show();
+	$("#ShowModal").show();
 	$("#signOutBtn").hide();
     // No user is signed in.
 
